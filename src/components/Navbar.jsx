@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import Logo from "../favicon.svg";
 
 const Navbar = () => {
   const state = useSelector((state) => state.cart);
