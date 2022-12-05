@@ -1,0 +1,15 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>Layer 1</title>
+  <g stroke="null">
+   <g stroke="null">
+    <title stroke="null">Layer 1</title>
+    <rect stroke="#000" fill="#d12929" x="2.5" y="149.56459" width="795.00002" height="448.39847" id="svg_4"/>
+    <rect stroke="#000" fill="#fff" x="225.57086" y="3.03694" width="372.04853" height="144.46926" id="svg_3" stroke-width="2"/>
+    <text stroke="#000" transform="matrix(3.84058 0 0 3.96813 -1136.23 -889.938)" fill="#ffffff" x="352.88948" y="324.70096" id="svg_2" stroke-width="0" font-size="24" font-family="Noto Sans JP" text-anchor="start" xml:space="preserve">Your Cart</text>
+    <rect stroke="#000" fill="#fff" x="256.05166" y="32.43045" width="311.08696" height="115.07571" id="svg_1" stroke-width="2"/>
+   </g>
+  </g>
+ </g>
+</svg>
