@@ -31,6 +31,7 @@ const Products = () => {
         <div key={index} className="product">
           <div className="image">
             <img
+              loading={"lazy"}
               src={item.image}
               alt={item.title}
               height="150px"
@@ -39,7 +40,13 @@ const Products = () => {
           </div>
           <p className="title">{item.title}</p>
           <p>$ {item.price}</p>
-          <Button fullWidth variant={"outlined"} onClick={() => handleClick(item)}>Add</Button>
+          <Button
+            fullWidth
+            variant={"outlined"}
+            onClick={() => handleClick(item)}
+          >
+            Add
+          </Button>
         </div>
       ))}
     </div>

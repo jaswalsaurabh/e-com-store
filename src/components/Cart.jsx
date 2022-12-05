@@ -38,6 +38,7 @@ const Cart = () => {
             <div className="image">
               <img
                 src={item.image}
+                loading={"lazy"}
                 height="130px"
                 width={"130px"}
                 alt={item.title}
@@ -69,7 +70,9 @@ const Cart = () => {
       </div>
       <div className="cart-footer">
         <p>Cart Total $ {getTotal()}</p>
-        <Button variant={"outlined"} color={"success"} >Checkout</Button>
+        <Button variant={"outlined"} color={"success"}>
+          Checkout
+        </Button>
       </div>
     </>
   );
