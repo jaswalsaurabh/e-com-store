@@ -12,6 +12,9 @@ const Navbar = () => {
       <Link className="logo" to={"/"}>
         Your Cart
       </Link>
+      <div className="searchDiv" >
+        <input className="searchInput" type={"text"} placeholder="search.." />
+      </div>
       <div className="linkDiv">
         <Link className="link" to={"/"}>
           Home
