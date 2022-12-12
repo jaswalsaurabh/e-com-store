@@ -1,6 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { Badge } from "@mui/material";
 
 const Navbar = () => {
   const state = useSelector((state) => state.cart);
@@ -15,7 +17,10 @@ const Navbar = () => {
           Home
         </Link>
         <Link className="link" to={"/cart"}>
-          Cart {state.length}
+          Cart{" "}
+          <Badge badgeContent={state.length} color="primary">
+            <ShoppingCartIcon color={"action"} />
+          </Badge>
         </Link>
       </div>
     </nav>
