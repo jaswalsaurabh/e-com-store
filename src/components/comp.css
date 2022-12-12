@@ -1,0 +1,12 @@
+.productPage {
+  display: flex;
+}
+
+.filter {
+    width: 20%;
+    padding: 1rem 0rem 0rem 2rem;
+}
+
+.product {
+  /* width: 70%; */
+}

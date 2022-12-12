@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { add } from "../store/CartSlice";
 import { getProducts } from "../store/ProductSlice";
 
-const Products = () => {
+
+const ProductList = () => {
   const dispatch = useDispatch();
 
   const state = useSelector((state) => state.products);
@@ -53,4 +54,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default ProductList;

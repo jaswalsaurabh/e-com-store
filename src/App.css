@@ -68,6 +68,7 @@ body {
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin-bottom: 7rem;
+  width: 100%;
 }
 
 .product {

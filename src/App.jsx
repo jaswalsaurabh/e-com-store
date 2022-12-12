@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Cart from './components/Cart'
 import Navbar from './components/Navbar'
-import Products from './components/Products'
+import ProductPage from './components/ProductPage'
 
 const App = () => {
   return (
@@ -10,7 +10,7 @@ const App = () => {
       <BrowserRouter>
       <Navbar/>
         <Routes>
-          <Route path='/' element={<Products/>} />
+          <Route path='/' element={<ProductPage/>} />
           <Route path='/cart' element={<Cart/>} />
         </Routes>
       </BrowserRouter>
