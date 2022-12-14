@@ -1,12 +1,25 @@
 import { Checkbox, FormControlLabel, FormGroup, Slider } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { handleFilter } from "../store/ProductSlice";
 
 const FilterComp = () => {
   const state = useSelector((state) => state.products);
+
+  const dispatch = useDispatch();
+
   function valuetext(value) {
     return value;
+  }
+
+  function handleChange(e) {
+    const { value, name, checked } = e.target;
+    let obj = { kind: "", item: "" };
+    if (checked) {
+      obj = { kind: name, item: value };
+    }
+    dispatch(handleFilter(obj));
   }
 
   const { categories, prices } = state;
@@ -16,6 +29,7 @@ const FilterComp = () => {
       FilterComp
       <Box width={200}>
         <Slider
+          name="price"
           aria-label="Price"
           defaultValue={prices[0]}
           getAriaValueText={valuetext}
@@ -24,12 +38,16 @@ const FilterComp = () => {
           max={prices[prices.length - 1]}
         />
       </Box>
-      {/* <input type={"range"} min={prices[0]} max={prices[prices.length - 1]} /> */}
       <div>
         <label>Select Category</label>
         {categories?.map((item, index) => (
-          <FormGroup key={index}>
-            <FormControlLabel control={<Checkbox />} label={item} />
+          <FormGroup key={index} onChange={handleChange}>
+            <FormControlLabel
+              name="category"
+              value={item}
+              control={<Checkbox />}
+              label={item}
+            />
           </FormGroup>
         ))}
       </div>
@@ -37,7 +55,7 @@ const FilterComp = () => {
         <label>Select Ratings</label>
         {ratings.map((item, index) => (
           <FormGroup key={index}>
-            <FormControlLabel control={<Checkbox />} label={item} />
+            <FormControlLabel name="rate" control={<Checkbox />} label={item} />
           </FormGroup>
         ))}
       </div>

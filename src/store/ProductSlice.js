@@ -22,6 +22,14 @@ const ProductSlice = createSlice({
       }
       return { ...state, filterData: temp };
     },
+    handleFilter(state, action) {
+      let temp = [];
+      const { kind, item } = action.payload;
+      if (item) {
+        temp = state.products.filter((obj) => obj[kind] === item);
+      }
+      return { ...state, filterData: temp };
+    },
     add(state, action) {
       return { ...state, products: action.payload };
     },
@@ -47,6 +55,7 @@ export const {
   setPrices,
   setRatings,
   handleSearch,
+  handleFilter,
 } = ProductSlice.actions;
 export default ProductSlice.reducer;
 
