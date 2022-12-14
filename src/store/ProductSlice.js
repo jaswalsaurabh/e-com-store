@@ -25,7 +25,9 @@ const ProductSlice = createSlice({
     handleFilter(state, action) {
       let temp = [];
       const { kind, item } = action.payload;
-      if (item) {
+      if (kind === "rate") {
+        temp = state.products.filter((obj) => obj.rating[kind] >= item);
+      } else if (item) {
         temp = state.products.filter((obj) => obj[kind] === item);
       }
       return { ...state, filterData: temp };

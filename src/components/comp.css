@@ -21,6 +21,21 @@
     padding: 1rem 0rem 0rem 2rem;
 }
 
+.priceDiv{
+  display: flex;
+  justify-content: space-between;
+}
+
+.priceDiv > p{
+  display: flex;
+  align-items: center;
+  margin-bottom: .5rem;
+}
+
+.rating{
+  transform: scale(.7);
+}
+
 .product {
   /* width: 70%; */
 }

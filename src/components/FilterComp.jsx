@@ -3,6 +3,7 @@ import { Box } from "@mui/system";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { handleFilter } from "../store/ProductSlice";
+import StarRateIcon from "@mui/icons-material/StarRate";
 
 const FilterComp = () => {
   const state = useSelector((state) => state.products);
@@ -23,10 +24,14 @@ const FilterComp = () => {
   }
 
   const { categories, prices } = state;
-  const ratings = ["4 & above", "3 & above"];
+  const ratings = [
+    { value: 4, label: "4 & above" },
+    { value: 3, label: "3 & above" },
+  ];
   return (
     <div className="filter">
       <h3>Filters</h3>
+      <h4>Price</h4>
       <Box width={200}>
         <Slider
           name="price"
@@ -54,8 +59,13 @@ const FilterComp = () => {
       <div>
         <h4>Select Ratings</h4>
         {ratings.map((item, index) => (
-          <FormGroup key={index}>
-            <FormControlLabel name="rate" control={<Checkbox />} label={item} />
+          <FormGroup key={index} onChange={handleChange}>
+            <FormControlLabel
+              name="rate"
+              value={item.value}
+              control={<Checkbox />}
+              label={item.label}
+            />
           </FormGroup>
         ))}
       </div>

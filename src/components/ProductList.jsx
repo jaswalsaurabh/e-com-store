@@ -1,8 +1,9 @@
 import { Button, CircularProgress } from "@mui/material";
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { add } from "../store/CartSlice";
 import { getProducts } from "../store/ProductSlice";
+import StarRateIcon from "@mui/icons-material/StarRate";
 
 const ProductList = ({ state }) => {
   const dispatch = useDispatch();
@@ -41,7 +42,15 @@ const ProductList = ({ state }) => {
             />
           </div>
           <p className="title">{item.title}</p>
-          <p>$ {item.price}</p>
+          <div className="priceDiv" >
+            <p>$ {item.price}</p>
+            <p>
+              {item.rating.rate}{" "}
+              <span className="rating" >
+                <StarRateIcon />
+              </span>{" "}
+            </p>
+          </div>
           <Button
             fullWidth
             variant={"outlined"}
