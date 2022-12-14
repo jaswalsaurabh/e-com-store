@@ -26,7 +26,7 @@ const FilterComp = () => {
   const ratings = ["4 & above", "3 & above"];
   return (
     <div className="filter">
-      FilterComp
+      <h3>Filters</h3>
       <Box width={200}>
         <Slider
           name="price"
@@ -39,7 +39,7 @@ const FilterComp = () => {
         />
       </Box>
       <div>
-        <label>Select Category</label>
+        <h4>Select Category</h4>
         {categories?.map((item, index) => (
           <FormGroup key={index} onChange={handleChange}>
             <FormControlLabel
@@ -52,7 +52,7 @@ const FilterComp = () => {
         ))}
       </div>
       <div>
-        <label>Select Ratings</label>
+        <h4>Select Ratings</h4>
         {ratings.map((item, index) => (
           <FormGroup key={index}>
             <FormControlLabel name="rate" control={<Checkbox />} label={item} />
