@@ -4,11 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { add } from "../store/CartSlice";
 import { getProducts } from "../store/ProductSlice";
 
-
-const ProductList = () => {
+const ProductList = ({ state }) => {
   const dispatch = useDispatch();
 
-  const state = useSelector((state) => state.products);
+  // const state = useSelector((state) => state.products);
 
   useEffect(() => {
     dispatch(getProducts());
@@ -26,9 +25,11 @@ const ProductList = () => {
     );
   }
 
+  const data = state.filterData.length > 0 ? state.filterData : state.products;
+
   return (
     <div className="productDiv">
-      {state.products.map((item, index) => (
+      {data.map((item, index) => (
         <div key={index} className="product">
           <div className="image">
             <img

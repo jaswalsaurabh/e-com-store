@@ -3,11 +3,11 @@ import FilterComp from "./FilterComp";
 import ProductList from "./ProductList";
 import "./comp.css";
 
-const ProductPage = () => {
+const ProductPage = ({state}) => {
   return (
     <div className="productPage">
       <FilterComp />
-      <ProductList />
+      <ProductList state={state} />
     </div>
   );
 };

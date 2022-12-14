@@ -4,16 +4,22 @@ import { Link } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Badge } from "@mui/material";
 
-const Navbar = () => {
+const Navbar = ({handleChange}) => {
   const state = useSelector((state) => state.cart);
-  console.log("state", state);
+
+ 
   return (
     <nav className="navbar">
       <Link className="logo" to={"/"}>
         Your Cart
       </Link>
-      <div className="searchDiv" >
-        <input className="searchInput" type={"text"} placeholder="search.." />
+      <div className="searchDiv">
+        <input
+          className="searchInput"
+          type={"text"}
+          placeholder="search.."
+          onChange={handleChange}
+        />
       </div>
       <div className="linkDiv">
         <Link className="link" to={"/"}>
