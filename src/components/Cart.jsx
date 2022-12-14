@@ -6,6 +6,11 @@ import { add, remove } from "../store/CartSlice";
 const Cart = () => {
   const state = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+
+  const data = new Set(state);
+
+  console.log("data", data);
+
   if (state.length === 0) {
     return (
       <div className="loader">
@@ -46,25 +51,28 @@ const Cart = () => {
             </div>
             <p className="title">{item.title}</p>
             <p>$ {item.price}</p>
-            <Button
-              className="button"
-              fullWidth
-              variant={"outlined"}
-              size="small"
-              onClick={() => handleClick("add", item)}
-            >
-              Add
-            </Button>
-            <Button
-              className="button"
-              fullWidth
-              variant={"outlined"}
-              size="small"
-              onClick={() => handleClick("remove", index)}
-              color={"secondary"}
-            >
-              Remove
-            </Button>
+            <div className="btnDiv">
+              <Button
+                className="cartBtn"
+                fullWidth
+                color={"secondary"}
+                variant={"outlined"}
+                size="small"
+                onClick={() => handleClick("remove", index)}
+              >
+                -
+              </Button>
+              <p className="cartBtn">1</p>
+              <Button
+                className="cartBtn"
+                fullWidth
+                variant={"outlined"}
+                size="small"
+                onClick={() => handleClick("add", item)}
+              >
+                +
+              </Button>
+            </div>
           </div>
         ))}
       </div>

@@ -36,6 +36,17 @@
   transform: scale(.7);
 }
 
+.btnDiv{
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.cartBtn{
+  width: 33% !important;
+  text-align: center;
+}
+
 .product {
   /* width: 70%; */
 }

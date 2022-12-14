@@ -1,6 +1,6 @@
 import { Button, CircularProgress } from "@mui/material";
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { add } from "../store/CartSlice";
 import { getProducts } from "../store/ProductSlice";
 import StarRateIcon from "@mui/icons-material/StarRate";
@@ -8,7 +8,9 @@ import StarRateIcon from "@mui/icons-material/StarRate";
 const ProductList = ({ state }) => {
   const dispatch = useDispatch();
 
-  // const state = useSelector((state) => state.products);
+  const cartState = useSelector((state) => state.cart);
+
+  console.log("cartState", cartState);
 
   useEffect(() => {
     dispatch(getProducts());
@@ -42,11 +44,11 @@ const ProductList = ({ state }) => {
             />
           </div>
           <p className="title">{item.title}</p>
-          <div className="priceDiv" >
+          <div className="priceDiv">
             <p>$ {item.price}</p>
             <p>
               {item.rating.rate}{" "}
-              <span className="rating" >
+              <span className="rating">
                 <StarRateIcon />
               </span>{" "}
             </p>
