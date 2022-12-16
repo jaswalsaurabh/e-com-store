@@ -10,7 +10,7 @@ const ProductList = ({ state }) => {
 
   const cartState = useSelector((state) => state.cart);
 
-  console.log("cartState", cartState);
+  // console.log("cartState", cartState);
 
   useEffect(() => {
     dispatch(getProducts());

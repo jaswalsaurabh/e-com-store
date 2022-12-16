@@ -9,7 +9,6 @@ const Cart = () => {
 
   const data = new Set(state);
 
-  console.log("data", data);
 
   if (state.length === 0) {
     return (
